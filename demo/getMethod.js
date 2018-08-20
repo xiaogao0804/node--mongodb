@@ -1,0 +1,9 @@
+var express = require('express');
+var app = express();
+
+app.get('/handle', function(req, res) {
+  res.send('hello world');
+});
+app.listen(3000, function(){
+    console.log('server is listening')
+})

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>express Demo</title>
+</head>
+<body>
+    <p>登陆演示</p>
+    <input type="text" id="user" size="40"><br>
+    <input type="password" id="password" size="40"><br>
+    <input type="button" id="submit" value="登陆">
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var user, pass;
+        $("#submit").click(function(){
+            user = $('#user').val()
+            pass = $('#password').val()
+            $.post('http://localhost:3003/login', { user: user, password: pass}, function(data){
+                if(data == 'done'){
+                    alert('登陆成功')
+                }
+            })
+        })
+    })
+</script>
+</html>
